@@ -21,6 +21,10 @@ export class PaymentDetailService {
     return this.http.put(`${this.baseURL}/${this.formData.paymentDetailID}`, this.formData);
   }
 
+  deletePaymentDetail(id: number) {
+    return this.http.delete(`${this.baseURL}/${id}`);
+  }
+
   refreshList() {
     this.http.get(this.baseURL)
       .toPromise()
